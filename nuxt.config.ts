@@ -159,7 +159,7 @@ const config: Configuration = {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    extend(config, ctx) {
+    extend(config:any, ctx:any) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         if (!config.module) return

@@ -1,10 +1,117 @@
+{
+  // Enable Auto convert on save
+  //"markdown-pdf.convertOnSave": true,
+  // 拡張機能を自動更新
+  "C_Cpp.updateChannel": "Insiders",
+  // "extensions.autoUpdate": true,
+  // ファイルブラウザに表示しない
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.DS_Store": true,
+    // python
+    "**/*.pyc": true,
+    ".nyc_output": true,
+    "obj": true,
+    "bin": true,
+    "**/__pycache__": true,
+    "**/.mypy_cache/**": true,
+  },
+  // "files.watcherExclude": {
+  //   "**/venv/**": true
+  // },
+  // 検索(Quick Open含む)から除外するファイルを指定。エクスプローラーには表示される
+  // files.excludeはエクスプローラーからも検索からも除外され、完全にないものとして扱われる
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/bundle": true,
+    "**/composer": true,
+    "**/tmp": true,
+    "**/.tmp": true
+    // 例えばキャッシュディレクトリを追加すると、検索で余計なファイルが出てこなくて便利
+    //"**/tmp/cache": true
+  },
+  // 「ファイル モニタリングから除外するファイル パスの glob パターンを構成します。この設定を変更すると、再起動が必要になります。始動時に Code が消費する CPU 時間が多い場合は、大規模なフォルダーを除外して初期ロードを減らせます」とのこと。vendorには大抵外部ライブラリが入っているので追加で指定している
+  //"files.watcherExclude": {
+  //  "**/.git/objects/**": true,
+  //  "**/node_modules/**": true,
+  //  "**/vendor/**": true
+  //},
+  "python.linting.ignorePatterns": [
+    ".vscode/*.py",
+    "**/site-packages/**/*.py",
+    // add
+    "**/mypy_modules/**/*.py"
+  ],
+  //ミニマップ非表示
+  "editor.minimap.enabled": false,
+  // エクスプローラの開いているファイル一覧の表示ファイル数
+  "explorer.openEditors.visible": 50,
+  //パスの表示
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
+  "window.zoomLevel": -1,
+  // Quick Openで開いたファイルはプレビューにしない方が使いやすい
+  //"workbench.editor.enablePreviewFromQuickOpen": false,
+  //utf-8(shiftjis)として読み込む
+  "files.encoding": "utf8",
+  //ファイル内の単語を入力候補としない。(true?)
+  "editor.wordBasedSuggestions": false,
+  //単語の区切り文字に全角記号、助詞、空白を追記します。
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?、。「」（）；：・？＜＞＋－＊／｛｝｜～＆％＄＃”！’　にをはがのとも",
+  //カーソルがにゅるっと点滅する(phase?)
+  "editor.cursorBlinking": "smooth",
+  //カーソルで何も選択していない状態でコピーを行った場合のデフォルトの動作は、カレント行をまるまるコピーします。選択範囲を指定しないでコピーする場合に現在の行をコピーしないようにします。
+  // "editor.emptySelectionClipboard": false,
+  //複数行を選択した状態で検索すると範囲検索を行うようにします。
+  "editor.find.autoFindInSelection": "multiline",
+  "workbench.colorTheme": "Solarized Dark",
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Source Han Code JP",
+  // "Ricty Diminished Discord",
+  //"editor.fontFamily": "Monaco, Consolas",
+  //"editor.fontFamily": "Fira Code",
+  //"editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "Source Han Code JP",
+  //タブとして入力されない
 
+  ////////////////////////////////////////////////////////////
+  "emmet.triggerExpansionOnTab": true,
+  //jsxでemmetを使えるようにする
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "html": {
+      "attr_quotes": "single"
+    },
+    "jsx": {
+      "self_closing_tag": true
+    }
+  },
+  // beautify
+  "beautify.config": "",
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "HookyQR.beautify"
+  // },
+  "[csharp]": {
+    "editor.defaultFormatter": "Leopotam.csharpfixformat",
+    "editor.tabSize": 4,
+  },
   ////////////////////////////////////////////////////////////
   //eslintの有効化
   "eslint.enable": true,
   // ESLint + Prettierで行うので、別のフォーマッターに干渉されないように
   "javascript.format.enable": false,
-  // "editor.formatOnSave": true,
+
+  // "[javascript]": {
+  "editor.formatOnSave": false,
+  // },
+
   "files.autoSave": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -14,8 +121,8 @@
     "javascript",
     "typescript",
   ],
-  // "vetur.validation.template": false,
-  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.validation.template": false,
+  // "vetur.format.defaultFormatter.js": "prettier-eslint",
   // パス
   // "eslint.nodePath": "C:\\path\\to\\global\\node_modules"
   // root直下にnode_modulesがない場合
@@ -85,4 +192,5 @@
 //     "-p",
 //     "*test.py"
 // ],
-////////////////////////////////////////////////////////////
+//   "editor.tabSize": 4
+// },

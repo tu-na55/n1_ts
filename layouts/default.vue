@@ -1,93 +1,65 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
-    </v-app-bar>
-    <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
-  </v-app>
+  <div>
+    <header>
+      <nav>
+        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/menu1">Menu1</nuxt-link>
+        <nuxt-link to="/menu2">Menu2</nuxt-link>
+        <nuxt-link to="/menu3">Menu3</nuxt-link>
+        <nuxt-link to="/menu4">Menu4</nuxt-link>
+      </nav>
+    </header>
+    <nuxt />
+  </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
-    }
-  },
+<style>
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
+
+/* fontawesome */
+@import url('http://weloveiconfonts.com/api/?family=fontawesome');
+[class*='fontawesome-']:before {
+  font-family: 'FontAwesome', sans-serif;
 }
-</script>
+
+/* Simple Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body */
+body {
+  background: #e9e9e9;
+  color: #5e5e5e;
+  font: 400 87.5%/1.5em 'Open Sans', sans-serif;
+}
+
+/* header */
+header {
+  width: 100%;
+  background-color: #3498db;
+  text-align: center;
+  top: 0;
+  overflow: hidden;
+}
+
+header nav {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+header nav a {
+  color: #fff;
+  display: inline-block;
+  padding: 15px 25px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+</style>
