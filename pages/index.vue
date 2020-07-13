@@ -1,49 +1,31 @@
 <template>
-  <div>
-    <h1>LOGIN</h1>
-    <form>
-      <div class="form-item">
-        <label for="email"></label>
-        <input type="email" name="email" placeholder="Email Address" />
-      </div>
-      <div class="form-item">
-        <label for="password"></label>
-        <input type="password" name="password" placeholder="Password" />
-      </div>
-      <div class="button-panel">
-        <input type="button" class="button" title="LOGIN" value="LOGIN" />
-      </div>
-    </form>
-    <div class="form-footer">
-      <p>パスワードを忘れた方は<a href="#">こちら</a></p>
+  <div class="container">
+    <h1>HOME</h1>
+    <div>
+      <nuxt-link to="/">Home</nuxt-link>
+    </div>
+    <div>
+      <nuxt-link to="/menu1">Menu1</nuxt-link>
+    </div>
+    <div>
+      <nuxt-link to="/menu2">Menu2</nuxt-link>
+    </div>
+    <div>
+      <nuxt-link to="/menu3">Menu3</nuxt-link>
+    </div>
+    <div>
+      <nuxt-link to="/menu4">Menu4</nuxt-link>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-// import Logo from '~/components/Logo.vue'
-// import Logo from '@/components/Logo.vue'
 
-@Component({
-  // components: {
-  //   Logo,
-  // },
-
-  layout: 'login',
-})
-export default class Index extends Vue {}
-
-// import Logo from '~/components/Logo.vue'
-// import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
-// export default {
-//   components: {
-//     Logo,
-//     VuetifyLogo,
-//   },
-// }
+@Component({})
+export default class PageIndex extends Vue {}
 </script>
+
 <style>
 .container {
   text-align: center;

@@ -4,14 +4,14 @@
     <form>
       <div class="form-item">
         <label for="email"></label>
-        <input type="email" name="email" placeholder="Email Address" />
+        <input v-model="email" type="email" name="email" placeholder="Email Address" />
       </div>
       <div class="form-item">
         <label for="password"></label>
-        <input type="password" name="password" placeholder="Password" />
+        <input v-model="password" type="password" name="password" placeholder="Password" />
       </div>
       <div class="button-panel">
-        <input type="button" class="button" title="LOGIN" value="LOGIN" />
+        <input type="button" class="button" title="LOGIN" value="LOGIN" @click="handleLoginClick()" />
       </div>
     </form>
     <div class="form-footer">
@@ -22,12 +22,23 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import { userStore } from '@/store'
 
 @Component({
   // layout
   layout: 'login',
 })
-export default class PageLoginIndex extends Vue {}
+export default class PageLoginIndex extends Vue {
+  // data
+  email: string = ''
+  password: string = ''
+
+  // methods
+  handleLoginClick() {
+    userStore.setUserInfo({ EMAIL: this.email, PASSWORD: this.password })
+    this.$router.push('/')
+  }
+}
 </script>
 
 <style>

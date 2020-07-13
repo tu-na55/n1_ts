@@ -1,0 +1,14 @@
+{
+  // babel-preset-envを使用することを明示、変換先をfalse(何もしない)に指定
+  "presets": [["env", { "modules": false }]],
+          //  ["@babel/preset-env"]
+  "env": {
+    "test": {
+      // babel-preset-envを使用することを明示、対象環境をnodeに指定
+      "presets": [
+        ["env", { "targets": { "node": "current" } }]
+        // ["@babel/preset-env",{"targets": {"node": "current"}}]
+      ]
+    }
+  }
+}
