@@ -28,11 +28,10 @@ module.exports = {
     indent: ['error', 2],
     quotes: ['warn', 'single'],
     semi: ['error', 'never'],
-    // "semi": ["error", "always"]
+    'generator-star-spacing': 'off',
     'no-console': 'off',
     // 'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // 'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'generator-star-spacing': 'off',
     'prettier/prettier': 'error',
     // react
     // "react/no-set-state": "error",
