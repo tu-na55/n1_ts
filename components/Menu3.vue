@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
-import ITodo from '@/types/ITodo'
+import ITodo from '@/models/ITodo'
 
 @Component({})
 export default class CompMenu3 extends Vue {

@@ -1,5 +1,5 @@
 import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators'
-import IUser from '~/types/IUser'
+import IUser from '@/models/IUser'
 
 @Module({ stateFactory: true, namespaced: true, name: 'user' })
 export default class User extends VuexModule implements IUser {

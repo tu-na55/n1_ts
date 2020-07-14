@@ -12,28 +12,33 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
+    "noImplicitAny": false, //add
+    // "noImplicitAny": true, //add
+    // "noImplicitThis": false, //add
+    "noImplicitThis": true,  //add
     "noEmit": true,
+    "skipLibCheck": true, //add
     "experimentalDecorators": true,
     "importHelpers": true, //add
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./*"
-      ]
+      "~/*": ["./*"],
+      "@/*": ["./*"],
+      // "@/*": ["src/*"],
     },
     "types": [
       "@types/node",
       "@nuxt/types",
-      "vuetify", //add
+      "@nuxtjs/vuetify", //add
+      "@nuxtjs/axios", //add
       "jest" //add
     ]
   },
+  "include": ["**/*.ts", "**/*.vue"],
+  // "include": ["src/**/*.ts", "src/**/*.vue"],
   "exclude": [
     "node_modules",
     ".nuxt",
     "dist"
-  ]
+  ],
 }

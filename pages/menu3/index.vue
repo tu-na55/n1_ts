@@ -9,7 +9,7 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import { $axios } from '@/plugins/axios-accessor'
 import CompMenu3 from '@/components/Menu3.vue'
-import ITodo from '@/types/ITodo'
+import ITodo from '@/models/ITodo'
 
 @Component({
   components: {

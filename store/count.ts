@@ -1,6 +1,6 @@
 import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators'
-import ICountState from '@/types/ICountState'
-import IMyObj from '@/types/IMyObj'
+import ICountState from '@/models/ICountState'
+import IMyObj from '@/models/IMyObj'
 
 @Module({ stateFactory: true, namespaced: true, name: 'count' })
 export default class Count extends VuexModule implements ICountState {

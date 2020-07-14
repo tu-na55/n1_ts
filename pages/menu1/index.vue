@@ -13,7 +13,7 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import CompMenu1 from '@/components/Menu1.vue'
-import IMyObj from '@/types/IMyObj.ts'
+import IMyObj from '@/models/IMyObj.ts'
 
 @Component({
   components: {
