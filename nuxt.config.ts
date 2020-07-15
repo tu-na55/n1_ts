@@ -79,7 +79,7 @@ const config: Configuration = {
   plugins: [
     { src: '@/plugins/vuetify', ssr: false },
     // '@/plugins/fontawesome',
-    // { src: 'plugins/registerSW.js'},
+    { src: '@/plugins/registerSw.js', ssr: false },
     '@/plugins/axios-accessor',
     '@/plugins/myPlugin',
     '@/plugins/myConst',
@@ -122,35 +122,38 @@ const config: Configuration = {
   //   },
   //   importScripts: ['sw.js'], // 後述、必須
   // },
-
-  workbox: {
-    //     // キャッシュの設定
-    //     // dev: true, //開発環境でもPWAできるように
-    // swDest: 'static/sw.js',
-    importScripts: ['main-sw.js'],
-    //     // skipWaiting: true,
-    //     // clientsClaim: true,
-    //     // runtimeCaching: [
-    //     //   {
-    //     //     // APIから取得した結果
-    //     //     urlPattern: '/api/xxxx/.*',
-    //     //     handler: 'cacheFirst',
-    //     //     method: 'GET',
-    //     //     strategyOptions: {
-    //     //       cacheExpiration: {
-    //     //         maxAgeSeconds: 60 * 60 * 24, // 1日
-    //     //       },
-    //     //       cacheableResponse: {
-    //     //         statuses: [200],
-    //     //       },
-    //     //     },
-    //     //   },
-    //     // ],
+  pwa: {
+    workbox: {
+      //     // キャッシュの設定
+      //     // dev: true, //開発環境でもPWAできるように
+      // swDest: 'static/sw.js',
+            // importScripts: ['custom-sw.js'],
+      skipWaiting: true,
+      clientsClaim: true,
+      //     // skipWaiting: true,
+      //     // clientsClaim: true,
+      //     // runtimeCaching: [
+      //     //   {
+      //     //     // APIから取得した結果
+      //     //     urlPattern: '/api/xxxx/.*',
+      //     //     handler: 'cacheFirst',
+      //     //     method: 'GET',
+      //     //     strategyOptions: {
+      //     //       cacheExpiration: {
+      //     //         maxAgeSeconds: 60 * 60 * 24, // 1日
+      //     //       },
+      //     //       cacheableResponse: {
+      //     //         statuses: [200],
+      //     //       },
+      //     //     },
+      //     //   },
+      //     // ],
+    },
   },
   manifest: {
     name: 'nuxt-app',
     short_name: 'nuxt-app',
-    // title: 'nuxt-title',
+    title: 'nuxt-title',
     lang: 'ja',
     display: 'standalone',
     // display: 'minimal-ui',s
@@ -273,8 +276,8 @@ const config: Configuration = {
     typeCheck: true,
     ignoreNotFoundWarnings: true,
   },
-  router: {
-    middleware: ['route-log'],
-  },
+  // router: {
+  //   middleware: ['route-log'],
+  // },
 }
 export default config

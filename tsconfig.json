@@ -24,8 +24,8 @@
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./*"],
-      // "~/*": ["src/*"],
-      // "@/*": ["src/*"],
+      // "~/*": ["./src/*"],
+      // "@/*": ["./src/*"],
     },
     "types": [
       "@types/node",
@@ -35,8 +35,8 @@
       // "jest" //add
     ]
   },
-  "include": ["**/*.ts", "**/*.vue"],
-  // "include": ["src/**/*.ts", "src/**/*.vue"],
+  // "include": ["**/*.ts", "**/*.vue"],
+  // "include": ["./src/**/*.ts", "./src/**/*.vue"],
   "exclude": [
     "node_modules",
     ".nuxt",
